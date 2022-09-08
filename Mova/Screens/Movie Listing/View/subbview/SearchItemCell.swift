@@ -1,22 +1,15 @@
-	//
-	//  SearchItemCell.swift
-	//  SK-Demo
-	//
-	//  Created by SK Rewar on 19/04/22.
-	//
 
 import UIKit
-import Foundation
 
 protocol SearchItemCellDelegate: AnyObject {
-	func openSearchDetailsScreen(license: String)
+	func searchMovieName(movie: String)
 }
 
 class SearchItemCell: UICollectionViewCell {
 	
-	@IBOutlet weak var searchTextField: TextField!
-	@IBOutlet weak var searchButton: Button!
-	@IBOutlet weak var heading: Label!
+	@IBOutlet weak var searchTextField: UITextField!
+	@IBOutlet weak var searchButton: UIButton!
+	@IBOutlet weak var heading: UILabel!
 	@IBOutlet weak var editTextView: UIView!
 	@IBOutlet weak var searchIcon: UIImageView!
 	
@@ -26,27 +19,33 @@ class SearchItemCell: UICollectionViewCell {
 		super.awakeFromNib()
 	}
 	
-	public func setUpCell(showKeyboard:Bool = false) {
-		heading.style = .style99
+	public func config(showKeyboard:Bool = false) {
+		heading.text = "Search your favorite movie"
 		searchTextField.delegate = self
 		editTextView.layer.cornerRadius = 12.0
 		editTextView.layer.borderWidth = 1.0
-		searchButton.style = .style30
-		searchButton.setTitle("Search", for: .normal)
-		searchTextField.autocapitalizationType = .allCharacters
+ 		searchButton.setTitle("Search", for: .normal)
 		if(showKeyboard) {
 			self.searchTextField.becomeFirstResponder()
 		}
 	}
 	 
 	@IBAction func searchButtonTapped(_ sender: Any) {
-		self.delegate?.openSearchDetailsScreen(license: self.searchTextField.text ?? "")
+		let movie = self.searchTextField.text ?? ""
+		if(movie.isEmpty){
+			return
+		}
+		self.delegate?.searchMovieName(movie: movie)
 	}
 	
 }
 extension SearchItemCell:UITextFieldDelegate {
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-		self.delegate?.openSearchDetailsScreen(license: self.searchTextField.text ?? "")
+		let movie = self.searchTextField.text ?? ""
+		if(movie.isEmpty){
+			return true
+		}
+		self.delegate?.searchMovieName(movie: self.searchTextField.text ?? "")
 		textField.resignFirstResponder()
 		return true
 	}

@@ -6,3 +6,9 @@
 //
 
 import Foundation
+class SearchResultDTO {
+	let imdbId:String
+	init(imdbId:String){
+		self.imdbId = imdbId
+	}
+}

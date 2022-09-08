@@ -17,6 +17,7 @@ struct SearchResultResponse: Codable {
 	var ratings: [Rating]?
 	var metascore, imdbRating, imdbVotes, imdbID: String?
 	var type, totalSeasons, response: String?
+	var error:String?
 	
 	enum CodingKeys: String, CodingKey {
 		case title = "Title"
@@ -39,9 +40,10 @@ struct SearchResultResponse: Codable {
 		case type = "Type"
 		case totalSeasons
 		case response = "Response"
+		case error = "Error"
 	}
 	
-	init(title: String?, year: String?, rated: String?, released: String?, runtime: String?, genre: String?, director: String?, writer: String?, actors: String?, plot: String?, language: String?, country: String?, awards: String?, poster: String?, ratings: [Rating]?, metascore: String?, imdbRating: String?, imdbVotes: String?, imdbID: String?, type: String?, totalSeasons: String?, response: String?) {
+	init(title: String?, year: String?, rated: String?, released: String?, runtime: String?, genre: String?, director: String?, writer: String?, actors: String?, plot: String?, language: String?, country: String?, awards: String?, poster: String?, ratings: [Rating]?, metascore: String?, imdbRating: String?, imdbVotes: String?, imdbID: String?, type: String?, totalSeasons: String?, response: String?,error:String?) {
 		self.title = title
 		self.year = year
 		self.rated = rated
@@ -64,6 +66,7 @@ struct SearchResultResponse: Codable {
 		self.type = type
 		self.totalSeasons = totalSeasons
 		self.response = response
+		self.error = error
 	}
 }
 

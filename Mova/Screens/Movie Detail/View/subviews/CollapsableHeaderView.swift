@@ -7,14 +7,15 @@
 
 import UIKit
 
-class CollapsableHeaderView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+class CollapsableHeaderView: LoadableFromXibView {
+	@IBOutlet weak var headerImage: UIImageView!
+	
+	public func config(imageUrl:String?){
+		if let imageUrl = imageUrl {
+			headerImage.loadImageUsingCache(withUrl: imageUrl)
+		} else {
+			headerImage.image = Asset.placeholderImage
+		}
+	}
+	
 }

@@ -12,15 +12,15 @@
         <!--MovieLisingViewController-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="MovieLisingViewController" title="MovieLisingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="MovieListingViewController" customModule="Mova" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MovieListingViewController" title="MovieLisingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="MovieListingViewController" customModule="Mova" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tAk-ap-XiK">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oKZ-J9-eQ8">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="l0N-sU-cK7">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="A2p-R4-3K1">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -30,29 +30,28 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="tAk-ap-XiK" secondAttribute="bottom" id="9uY-eQ-SWg"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tAk-ap-XiK" secondAttribute="trailing" id="CqF-CP-G8d"/>
-                            <constraint firstItem="tAk-ap-XiK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Juq-cc-jJ3"/>
-                            <constraint firstItem="tAk-ap-XiK" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="aix-Zi-uos"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="oKZ-J9-eQ8" secondAttribute="bottom" id="Hnf-a6-2TH"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="oKZ-J9-eQ8" secondAttribute="trailing" id="d4X-eI-n7r"/>
+                            <constraint firstItem="oKZ-J9-eQ8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="s0P-BA-IcN"/>
+                            <constraint firstItem="oKZ-J9-eQ8" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="sYw-cf-CJt"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="YN0-G8-2WO"/>
                     <connections>
-                        <outlet property="movieCollectionView" destination="tAk-ap-XiK" id="BFO-o2-tUT"/>
+                        <outlet property="collectionViewFlowLayout" destination="A2p-R4-3K1" id="Jg7-Jf-kXY"/>
+                        <outlet property="movieCollectionView" destination="oKZ-J9-eQ8" id="1y8-AV-uo7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133" y="97"/>
+            <point key="canvasLocation" x="1042.0289855072465" y="96.428571428571431"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -10,18 +10,21 @@ import Foundation
 // MARK: - MovieSearchResponse
 struct MovieSearchResponse: Codable {
 	var searchResponse: [SearchResponse]?
-	var totalResults, response: String?
+	var totalResults, response,error: String?
+	
 	
 	enum CodingKeys: String, CodingKey {
 		case searchResponse = "Search"
 		case totalResults
 		case response = "Response"
+		case error = "Error"
 	}
 	
-	init(search: [SearchResponse]?, totalResults: String?, response: String?) {
+	init(search: [SearchResponse]?, totalResults: String?, response: String?,error:String?) {
 		self.searchResponse = search
 		self.totalResults = totalResults
 		self.response = response
+		self.error = error
 	}
 }
 

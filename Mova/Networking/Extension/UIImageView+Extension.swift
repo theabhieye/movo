@@ -26,14 +26,15 @@ extension UIImageView {
 		activityIndicator.center = self.center
 		
 		URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
-			activityIndicator.removeFromSuperview()
-			if error != nil {
-				self.image = Asset.placeholderImage
-				return
-			}
 			DispatchQueue.main.async {
+				activityIndicator.removeFromSuperview()
+
+				if error != nil {
+					self.image = Asset.placeholderImage
+					return
+				}
 				if let image = UIImage(data: data!) {
-					imageCache.setObject(image, forKey: urlString as NSString)
+ 					imageCache.setObject(image, forKey: urlString as NSString)
 					self.image = image
 				}
 			}

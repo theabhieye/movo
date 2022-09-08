@@ -6,3 +6,10 @@
 //
 
 import Foundation
+protocol MovieDetailAdapater:NSObject{
+	func showLoader()
+	func hideLoader()
+	func updateView(movieSearchResult:SearchResultResponse?)
+	func showErrorAlert(moviesResponse:SearchResultResponse)
+	func showUnknownErrorAlert(error:String)
+}

@@ -6,3 +6,10 @@
 //
 
 import Foundation
+protocol MovieListingAdapater: NSObject {
+	func updateMoiveResponse(_ moviesResponse:MovieSearchResponse)
+	func showLoader()
+	func hideLoader()
+	func showErrorAlert(moviesResponse:MovieSearchResponse)
+	func showUnknownErrorAlert(error:String)
+}

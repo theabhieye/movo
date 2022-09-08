@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MovieListTableViewCell: UICollectionViewCell{
+class MovieListCollectionViewCell: UICollectionViewCell{
 
 	@IBOutlet weak var containerBGView: UIView!
 	@IBOutlet weak var titleLbl: UILabel!
@@ -24,7 +24,7 @@ class MovieListTableViewCell: UICollectionViewCell{
 		self.containerBGView.roundCorners(cornerRadius: 10)
 		self.posterImg.roundCorners(cornerRadius: 20)
 		self.titleLbl.text = searchResponse?.title ?? String()
-		self.typeLbl.text = searchResponse?.type?.rawValue ?? String()
+		self.typeLbl.text = (searchResponse?.type?.rawValue ?? String()).uppercased()
 		if let img = searchResponse?.poster {
 			self.posterImg.loadImageUsingCache(withUrl: img)
 		} else {

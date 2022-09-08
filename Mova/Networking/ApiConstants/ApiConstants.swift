@@ -6,3 +6,6 @@
 //
 
 import Foundation
+enum API_CONSTANTS {
+	public static let BASE_URL = "http://www.omdbapi.com/?apikey=e5c8decb&"
+}
